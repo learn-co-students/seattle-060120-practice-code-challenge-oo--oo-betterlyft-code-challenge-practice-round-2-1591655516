@@ -11,20 +11,20 @@ class Ride
         @@all << self
     end 
 
-    def driver=(driver)
-        @driver = driver
+    def self.all
+        @@all
     end
+
+    #Returns the average distance across ALL rides
+     def average_distance
+        rides = Ride.all
+        rides.map{|rides|rides.distance}  
+        number = rides.map{|rides|rides.distance}
+        sum = 0
+        number.each { |a| sum+=a }
+        sum.to_f/number.size.to_f 
     
-    def distance=(distance)
-        @distance = distance
-    end 
-
-    def passenge=(passenger)
-        @passenger =passenger
-    end 
-
-    # def self.average_distance
-    # end 
+     end 
 end 
 
 
